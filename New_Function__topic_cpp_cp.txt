@@ -1,0 +1,130 @@
+=>__gcd( x,y) : 
+ to find the gcd of 2 numbers x and y // Here we have 2 underscore in the begining not one
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+=>
+  memset( void *pointer, int /char data, sizeof(data)[size of the pointer or uptill which size you want to assign value to pointer pointing element])
+ - refer gfg artical .
+   you can assign values like  0 and 1 but you can't assign values like 5.
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+=> 
+  min : inbuilt function <algorithm> header file
+for finding minimum of more then 2 numbers
+suppose, a[] = {1,2,0,3};
+
+--> code for finding it's minimum is:
+     int m = min({1,2,03},comp);
+     bool comp(int a,int b) // implementation of comp function[ we need to use it the same syntax for any number of element.]
+    {
+      return (a<b);
+    }
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+=>
+-  size_t data type : this data type is same as unsigned integer data type.
+ ------------------------------------------------------------------------------------------------------------------------------------------------------- 
+=> 
+    vector : : resize() in C++ STL
+The function alters the container’s content in actual by inserting or deleting the elements from it. It happens so,
+ - If the given value of n is less than the size at present then extra elements are demolished.
+ - If n is more than current size of container then upcoming elements are appended at the end of the vector.
+- Syntax: vectorname.resize(int n, int val)
+
+n – it is new container size, expressed in number of elements.
+val – if this parameter is specified then new elements are initialized with this value.
+-------------------------------------------------------------------------------------------------------------------------------------------------------  
+=>  
+Using return value of cin to take unknown number of inputs in C++
+ 
+Example code:
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int input; 
+    int count = 0; 
+    cout << "To stop enter any character";
+    cout << "\nEnter Your Input::";
+  
+    // cin returns false when a character
+    // is entered
+    while (cin >> input) 
+        count++; 
+      
+    cout << "\nTotal number of inputs entered: " 
+         << count;
+    return 0;
+}
+ ------------------------------------------------------------------------------------------------------------------------------------------------------- 
+=> To find minumum element in the array
+  - return type integer pointer ,
+    *int  x = *min_elemnt(arr,arr+n); // here ,n is the size of the array 
+
+   ------------------------------------------------------------------------------------------------------------------------------------------------------- 
+   ------------------------------------------------------------------------------------------------------------------------------------------------------- 
+=> When we pass vector in a function in a c++ program : [https://www.geeksforgeeks.org/passing-vector-function-cpp/]
+    When a vector is passed to a function, a copy of the vector is created.
+    For example, we can see below program, changes made inside the function are not reflected outside because function has a copy.
+  
+Code: 
+#include<bits/stdc++.h>
+using namespace std;
+   
+// The vect here is a copy of vect in main()
+void func(vector<int> vect)
+{
+   vect.push_back(30);
+}
+   
+int main()
+{
+    vector<int> vect;
+    vect.push_back(10);
+    vect.push_back(20);
+   
+    func(vect);
+   
+    // vect remains unchanged after function
+    // call
+    for (int i=0; i<vect.size(); i++)
+       cout << vect[i] << " ";
+   
+    return 0;
+}
+
+Output:
+10 20
+
+rather than it's good idea to pass as refrence. [refer gfg]
+
+------------------------------------------------------------------------------------------------------------------------------------------------------- 
+=> To find index of maximum element in array
+
+In the STL, std::max_element provides the iterator (which can be used to get index with std::distance, if you really want it).
+
+int main(int argc, char** argv) {
+  int A[4] = {0, 2, 3, 1};
+  const int N = sizeof(A) / sizeof(int);
+
+  cout << "Index of max element: "
+       << distance(A, max_element(A, A + N))
+       << endl;
+
+  return 0;
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------- 
+https://www.geeksforgeeks.org/set-vs-map-c-stl/
+// Article about set and map
+------------------------------------------------------------------------------------------------------------------------------------------------------- 
+=> Article about seive :
+
+https://www.codingninjas.com/blog/2021/01/25/what-is-the-sieve-method/
+------------------------------------------------------------------------------------------------------------------------------------------------------- 
+=> code stub regarding notes for map:
+
+void f(const map < string, int > & M) {
+  if (M[“the meaning”] == 42) { // Error! Cannot use [] on const map objects!
+  }
+  if (M.find(“the meaning”) != M.end() && M.find(“the meaning”) - > second == 42) { // Correct
+    cout << “Don’ t Panic!” << endl;
+  }
+}
